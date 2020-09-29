@@ -1,10 +1,21 @@
+<?php
+    include('db.php');
+?>
+
+<?php
+    if(isset($_POST['submit'])){
+        move_uploaded_file($_FILES['file']['tmp_name'],"profile_images/".$_FILES['file']['name']);
+        $q = mysqli_query($con,"UPDATE users SET image = '".$_FILES['file']['name']."' WHERE id = 1");
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
+<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Activation Page</title>
-
+    <title>Change Profile</title>
+    
     <!-- BOOTSTRAP -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -16,18 +27,18 @@
 
     <!-- FONT -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sriracha">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit">
 
     <!-- CUSTOM -->
     <link rel="stylesheet" href="css/styleToni.css">
 </head>
 <body>
-    <nav class="navbar navbar-custom navbar-expand-sm">
+
+<nav class="navbar navbar-custom navbar-expand-sm">
         <img src="asset/logo.png" width="50" height="50" alt="">
         <p class="navbar-brand-custom">Yuk Titip</p>
         <ul class="navbar-nav ml-auto"> 
             <li class="nav-item"> 
-                <a class="nav-link" href="#"> 
+                <a class="nav-link" href="www.google.com"> 
                   Home 
                 </a> 
             </li> 
@@ -42,20 +53,37 @@
                 </a> 
             </li> 
             <li class="nav-item"> 
-                <a class="nav-link" href="aboutUs.php"> 
+                <a class="nav-link" href="www.google.com"> 
                   <i class="fa fa-user fa-lg" aria-hidden="true" style="color: white;"></i> 
                 </a> 
             </li> 
         </ul> 
     </nav>
 
-    <div class="backBox">
-        <div class="emailIcon">
-            <i class="fa fa-envelope" aria-hidden="true"></i>
-        </div>
-        <p class="emailTxt mx-auto d-block">We have sent an activation link to your email. Activate to start using your account</p>
-    </div>
+    <div class="container">
 
-    <button class="btn mx-auto d-block" style="margin-top: 40%;" onclick="window.location='http://www.google.com'">Finish</button>
+        <?php
+            $q = mysqli_query($con,"SELECT * FROM users where id=1");
+            while($row = mysqli_fetch_assoc($q)){
+                if($row['image'] == ""){
+                    echo "<img src='profile_images/default.png' class='mx-auto d-block rounded-circle' alt='Cinque Terre' style='margin-top: 1rem;'>";
+                } else {
+                    echo "<img width='200' height='200' src='profile_images/".$row['image']."' class='mx-auto d-block rounded-circle' alt='Cinque Terre' style='margin-top: 1rem;'>";
+                }
+                echo "<br>";
+            }
+        ?>
+
+        <div style="margin: 2rem 23rem;">
+            <form action="" method="post" enctype="multipart/form-data">
+                <input type="file" name="file">
+                <input type="submit" name="submit">
+            </form> 
+        </div>
+
+        <a href="profileUser.php" class="btn btn-primary" style="position:absolute; left:46%;">Back to Profile</a>
+        
+    </div>
+    
 </body>
 </html>

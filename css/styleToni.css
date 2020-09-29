@@ -24,6 +24,13 @@ ul li a {
     border-radius: 10px;
 }
 
+.nav-button {
+    background-color: #004E98;
+    width: 150px;
+    height: 30px;
+    border-radius: 10px;
+}
+
 .backBox {
     position: absolute;
     left: 20.35%;

@@ -40,12 +40,12 @@
                 </a> 
             </li> 
             <li class="nav-item"> 
-                <a class="nav-link" href="contactUs.html"> 
+                <a class="nav-link" href="contactUs.php"> 
                   Contact Us
                 </a> 
             </li> 
             <li class="nav-item"> 
-                <a class="nav-link" href="aboutUs.html"> 
+                <a class="nav-link" href="aboutUs.php"> 
                   About Us 
                 </a> 
             </li> 
@@ -115,9 +115,9 @@
                 <br>
                 <a style="color: black;" href="#">Home</a>
                 <br><br>
-                <a style="color: black;" href="contactUs.html">Contact Us</a>
+                <a style="color: black;" href="contactUs.php">Contact Us</a>
                 <br><br>
-                <a style="color: black;" href="aboutUs.html">About Us</a>
+                <a style="color: black;" href="aboutUs.php">About Us</a>
             </div>
             <div class="col-sm-3" style="margin-top: 2rem;">
                 <h4>Contact</h4>

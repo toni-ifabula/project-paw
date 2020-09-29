@@ -33,17 +33,17 @@
                 </a> 
             </li> 
             <li class="nav-item"> 
-                <a class="nav-link" href="contactUs.html"> 
+                <a class="nav-link" href="contactUs.php"> 
                   Contact Us
                 </a> 
             </li> 
             <li class="nav-item"> 
-                <a class="nav-link" href="aboutUs.html"> 
+                <a class="nav-link" href="aboutUs.php"> 
                   About Us 
                 </a> 
             </li> 
             <li class="nav-item"> 
-                <a class="nav-link" href="aboutUs.html"> 
+                <a class="nav-link" href="aboutUs.php"> 
                   <i class="fa fa-user fa-lg" aria-hidden="true" style="color: white;"></i> 
                 </a> 
             </li> 

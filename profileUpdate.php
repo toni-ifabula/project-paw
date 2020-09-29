@@ -1,3 +1,22 @@
+<?php
+    include('db.php');
+
+    //$id = $_GET['id'];
+
+    $query = mysqli_query($con, "SELECT * FROM users WHERE id=1");
+
+    while($user_data = mysqli_fetch_assoc($query))
+    {
+        $nama = $user_data['nama'];
+        $tgl = $user_data['tanggal_lahir'];
+        $jk = $user_data['jenis_kelamin'];
+        $email = $user_data['email'];
+        $no_telp = $user_data['no_telp'];
+        $provinsi = $user_data['provinsi'];
+        $alamat = $user_data['alamat'];
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,17 +53,17 @@
                 </a> 
             </li> 
             <li class="nav-item"> 
-                <a class="nav-link" href="contactUs.html"> 
+                <a class="nav-link" href="contactUs.php"> 
                   Contact Us
                 </a> 
             </li> 
             <li class="nav-item"> 
-                <a class="nav-link" href="aboutUs.html"> 
+                <a class="nav-link" href="aboutUs.php"> 
                   About Us 
                 </a> 
             </li> 
             <li class="nav-item"> 
-                <a class="nav-link" href="aboutUs.html"> 
+                <a class="nav-link" href="aboutUs.php"> 
                   <i class="fa fa-user fa-lg" aria-hidden="true" style="color: white;"></i> 
                 </a> 
             </li> 
@@ -59,50 +78,50 @@
             <div class="form-group row">
                 <label for="inputNama" class="col-sm-3 col-form-label">Nama</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" id="inputNama">
+                    <input type="text" class="form-control" id="inputNama"  value=<?php echo $nama; ?>>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="inputTgl" class="col-sm-3 col-form-label">Tanggal Lahir</label>
                 <div class="col-sm-9">
-                    <input type="date" class="form-control" id="inputTgl">
+                    <input type="date" class="form-control" id="inputTgl"  value=<?php echo $tgl; ?>>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="inputJK" class="col-sm-3 col-form-label">Jenis Kelamin</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" id="inputJk">
+                    <input type="text" class="form-control" id="inputJk" value=<?php echo $jk; ?>>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="inputEmail" class="col-sm-3 col-form-label">Email</label>
                 <div class="col-sm-9">
-                    <input type="email" class="form-control" id="inputEmail">
+                    <input type="email" class="form-control" id="inputEmail" value=<?php echo $email; ?>>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="inputTelp" class="col-sm-3 col-form-label">No. Telp</label>
                 <div class="col-sm-9">
-                    <input type="number" class="form-control" id="inputTelp">
+                    <input type="number" class="form-control" id="inputTelp" value=<?php echo $no_telp; ?>>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="inputProv" class="col-sm-3 col-form-label">Provinsi</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" id="inputProv">
+                    <input type="text" class="form-control" id="inputProv" value=<?php echo $provinsi; ?>>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="inputAlamat" class="col-sm-3 col-form-label">Alamat</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" id="inputAlamat">
+                    <input type="text" class="form-control" id="inputAlamat" value=<?php echo $alamat; ?>>
                 </div>
             </div>
 
             <div class="row" style="margin: 1rem 0rem;">
                 <div class="col-sm-12 text-center">
                     <button type="submit" class="btn btn-primary btn-md center-block" Style="width: 100px;">Submit</button>
-                    <button type="reset" class="btn btn-danger btn-md center-block" Style="width: 100px; background-color: red;">Cancel</button>
+                    <button type="reset" class="btn btn-danger btn-md center-block" Style="width: 100px; background-color: red;">Reset</button>
                 </div>
             </div>
             
