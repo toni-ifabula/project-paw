@@ -74,53 +74,53 @@
 
         <h1 style="text-align: center; margin: 3rem 0rem">UPDATE PROFILE</h1>
 
-        <form action="">
+        <form action="proses/changeProfileProses.php" method="post">
             <div class="form-group row">
                 <label for="inputNama" class="col-sm-3 col-form-label">Nama</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" id="inputNama"  value=<?php echo $nama; ?>>
+                    <input name="nama" type="text" class="form-control" id="inputNama"  value=<?php echo $nama; ?>>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="inputTgl" class="col-sm-3 col-form-label">Tanggal Lahir</label>
                 <div class="col-sm-9">
-                    <input type="date" class="form-control" id="inputTgl"  value=<?php echo $tgl; ?>>
+                    <input name="tgl" type="date" class="form-control" id="inputTgl"  value=<?php echo $tgl; ?>>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="inputJK" class="col-sm-3 col-form-label">Jenis Kelamin</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" id="inputJk" value=<?php echo $jk; ?>>
+                    <input name="jk" type="text" class="form-control" id="inputJk" value=<?php echo $jk; ?>>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="inputEmail" class="col-sm-3 col-form-label">Email</label>
                 <div class="col-sm-9">
-                    <input type="email" class="form-control" id="inputEmail" value=<?php echo $email; ?>>
+                    <input name="email" type="email" class="form-control" id="inputEmail" value=<?php echo $email; ?>>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="inputTelp" class="col-sm-3 col-form-label">No. Telp</label>
                 <div class="col-sm-9">
-                    <input type="number" class="form-control" id="inputTelp" value=<?php echo $no_telp; ?>>
+                    <input name="no_telp" type="number" class="form-control" id="inputTelp" value=<?php echo $no_telp; ?>>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="inputProv" class="col-sm-3 col-form-label">Provinsi</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" id="inputProv" value=<?php echo $provinsi; ?>>
+                    <input name="provinsi" type="text" class="form-control" id="inputProv" value=<?php echo $provinsi; ?>>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="inputAlamat" class="col-sm-3 col-form-label">Alamat</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" id="inputAlamat" value=<?php echo $alamat; ?>>
+                    <input name="alamat" type="text" class="form-control" id="inputAlamat" value=<?php echo $alamat; ?>>
                 </div>
             </div>
 
             <div class="row" style="margin: 1rem 0rem;">
                 <div class="col-sm-12 text-center">
-                    <button type="submit" class="btn btn-primary btn-md center-block" Style="width: 100px;">Submit</button>
+                    <button name="updateProfile" class="btn btn-primary btn-md center-block" Style="width: 100px;">Submit</button>
                     <button type="reset" class="btn btn-danger btn-md center-block" Style="width: 100px; background-color: red;">Reset</button>
                 </div>
             </div>

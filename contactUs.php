@@ -53,30 +53,30 @@
     <div class="container">
         <h1 style="margin: 1rem 0rem;">Contact Us</h1>
 
-        <form action="">
+        <form action="proses/contactProses.php" method="post">
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="inputFirstName">Nama Depan</label>
-                    <input type="text" class="form-control" id="inputFirstName" placeholder="Nama Depan">
+                    <input name="nama_depan" type="text" class="form-control" id="inputFirstName" placeholder="Nama Depan">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="inputLastName">Nama Belakang</label>
-                    <input type="text" class="form-control" id="inputLastName" placeholder="Nama Belakang">
+                    <input name=nama_belakang type="text" class="form-control" id="inputLastName" placeholder="Nama Belakang">
                 </div>
             </div>
             <div class="form-group">
                 <label for="inputOrg">Email</label>
-                <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                <input name="email" type="email" class="form-control" id="inputEmail" placeholder="Email">
             </div>
             <div class="form-group">
                 <label for="inputPhone">Nomor Telepon</label>
-                <input type="number" class="form-control" id="inputPhone" placeholder="08xxxxxxxxxx">
+                <input name="no_telp" type="number" class="form-control" id="inputPhone" placeholder="08xxxxxxxxxx">
             </div>
             <div class="form-group">
                 <label for="txtMessage">Message</label>
-                <textarea class="form-control" id="txtMessage" rows="10" placeholder="Message"></textarea>
+                <textarea name="message" class="form-control" id="txtMessage" rows="10" placeholder="Message"></textarea>
             </div>
-            <button type="submit" class="btn">Submit</button>
+            <button name="submitMessage" type="submit" class="btn">Submit</button>
         </form>
     </div>  
 </body>
