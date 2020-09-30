@@ -3,9 +3,13 @@
 ?>
 
 <?php
-    if(isset($_POST['submit'])){
-        move_uploaded_file($_FILES['file']['tmp_name'],"profile_images/".$_FILES['file']['name']);
-        $q = mysqli_query($con,"UPDATE users SET image = '".$_FILES['file']['name']."' WHERE id = 1");
+    if(isset($_POST['insert'])){
+        $file = addslashes(file_get_contents($_FILES["image"]["tmp_name"]));  
+        $query = "UPDATE users SET image = ('$file') WHERE id=1"; 
+        if(mysqli_query($con, $query))  
+        {  
+            echo '<script>alert("Image Inserted into Database")</script>';  
+        }  
     }
 ?>
 
@@ -30,8 +34,9 @@
 
     <!-- CUSTOM -->
     <link rel="stylesheet" href="css/styleToni.css">
+    <script src="script/script.js"></script>
 </head>
-<body>
+<body onload="checkImage()">
 
 <nav class="navbar navbar-custom navbar-expand-sm">
         <img src="asset/logo.png" width="50" height="50" alt="">
@@ -63,21 +68,21 @@
     <div class="container">
 
         <?php
-            $q = mysqli_query($con,"SELECT * FROM users where id=1");
-            while($row = mysqli_fetch_assoc($q)){
+            $query = mysqli_query($con, "SELECT * FROM users WHERE id=1"); 
+            while($row = mysqli_fetch_array($query))  
+            {
                 if($row['image'] == ""){
                     echo "<img src='profile_images/default.png' class='mx-auto d-block rounded-circle' alt='Cinque Terre' style='margin-top: 1rem;'>";
                 } else {
-                    echo "<img width='200' height='200' src='profile_images/".$row['image']."' class='mx-auto d-block rounded-circle' alt='Cinque Terre' style='margin-top: 1rem;'>";
+                    echo '<img src="data:image/jpg;base64,'.base64_encode($row['image'] ).'" height="200" width="200" class="mx-auto d-block rounded-circle" style="margin-top: 1rem;" />';  
                 }
-                echo "<br>";
-            }
+            } 
         ?>
 
         <div style="margin: 2rem 23rem;">
             <form action="" method="post" enctype="multipart/form-data">
-                <input type="file" name="file">
-                <input type="submit" name="submit">
+                <input type="file" name="image" id="image">
+                <input type="submit" name="insert" id="insert" value="Submit">
             </form> 
         </div>
 

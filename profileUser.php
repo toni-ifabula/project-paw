@@ -74,7 +74,15 @@
     <div class="container">
 
         <?php
-            echo "<img width='200' height='200' src='profile_images/".$image."' class='mx-auto d-block rounded-circle' alt='Cinque Terre' style='margin-top: 1rem;'>";
+            $query = mysqli_query($con, "SELECT * FROM users WHERE id=1"); 
+            while($row = mysqli_fetch_array($query))  
+            {
+                if($row['image'] == ""){
+                    echo "<img src='profile_images/default.png' class='mx-auto d-block rounded-circle' alt='Cinque Terre' style='margin-top: 1rem;'>";
+                } else {
+                    echo '<img src="data:image/jpg;base64,'.base64_encode($row['image'] ).'" height="200" width="200" class="mx-auto d-block rounded-circle" style="margin-top: 1rem;" />';  
+                }
+            }    
         ?>
         <a href="changePicture.php" class="btn btn-primary" style="position:absolute; left:45.5%; margin-top:0.5rem;">Change Picture</a>
 
