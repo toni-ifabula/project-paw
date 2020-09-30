@@ -18,6 +18,11 @@ ul li a {
     color: white;
 }
 
+.wrapper{
+    width:300px;
+    height: 150px;
+}
+
 .btn {
     background-color: #004E98;
     color: white;
