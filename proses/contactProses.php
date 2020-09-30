@@ -4,6 +4,7 @@
         include('../db.php'); 
         
         // $id = $_POST['id'];
+        
         $nama_depan = $_POST['nama_depan'];
         $nama_belakang = $_POST['nama_belakang'];
         $email = $_POST['email'];

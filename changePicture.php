@@ -3,6 +3,8 @@
 ?>
 
 <?php
+    //$id = $_GET['id'];
+    
     if(isset($_POST['insert'])){
         $file = addslashes(file_get_contents($_FILES["image"]["tmp_name"]));  
         $query = "UPDATE users SET image = ('$file') WHERE id=1"; 
